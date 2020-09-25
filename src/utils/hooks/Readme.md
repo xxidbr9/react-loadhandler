@@ -1,2 +1,0 @@
-## MANTAP
-ini bisa
