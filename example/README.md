@@ -6,12 +6,10 @@ This is an simple example for react-loadhandler
 
 ```
 git clone https://github.com/xxidbr9/react-loadhandler.git
-
 ```
 
 ```
 cd ./example
-
 ```
 
 ```
