@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoad } from "./utils/hooks";
+import { useLoad } from "react-loadhandler";
 
 function App() {
     const { handlerLoad, loadRef, percentage, loading } = useLoad();

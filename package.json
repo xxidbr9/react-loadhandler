@@ -1,6 +1,6 @@
 {
     "name": "react-loadhandler",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "private": false,
     "dependencies": {
         "react": "^16.13.1",
@@ -17,7 +17,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "pub": "rm -rf dist && mkdir dist &&  babel src/utils/hooks -d dist --copy-files"
+        "pub": "rm -rf dist && mkdir dist && cp package.json ./dist &&  babel src/utils/hooks -d dist --copy-files && npm publish ./dist"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -37,5 +37,11 @@
     "devDependencies": {
         "@babel/cli": "^7.11.6",
         "@babel/preset-react": "^7.10.4"
-    }
+    },
+    "keywords": [
+        "react",
+        "react-loader",
+        "loading percentage",
+        "react handle loading"
+    ]
 }
