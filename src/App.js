@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useLoad } from "./utils/hooks";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { handlerLoad, loadRef, percentage, loading } = useLoad();
+
+    let range = [];
+    const nMax = 32;
+    for (let i = 0; i < nMax; i++) {
+        range.push(i);
+    }
+
+    return (
+        <div className='App' id='test'>
+            {!!loading && (
+                <div style={{ fontSize: "100px", fontWeight: "900" }}>
+                    {percentage} %
+                </div>
+            )}
+            <div style={{ display: !loading ? "" : "none" }}>
+                {range.map(e => (
+                    <img
+                        key={e}
+                        ref={loadRef}
+                        alt={`is a ${e}`}
+                        src={`https://source.unsplash.com/random/${e}`}
+                        onLoad={handlerLoad}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default App;
