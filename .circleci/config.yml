@@ -24,9 +24,4 @@ workflows:
   version: 2
   package-deploy:
     jobs:
-      - deploy:
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+      - deploy
