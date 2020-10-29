@@ -12,7 +12,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -45,4 +45,6 @@ workflows:
   package-deploy:
     jobs:
       - pre-pare
-      - deploy
+      - deploy:
+          requires:
+            - pre-pare
