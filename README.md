@@ -2,4 +2,6 @@
 
 #### TODO
 
-[ ] Create Beter Readme
+```
+npm i react-loadhandler
+```
