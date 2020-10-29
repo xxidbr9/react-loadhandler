@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 
 /*
- * @param {boolean} loading the parameter for loading
+ * @returns {{loading:boolean,handlerLoad:function, loadRef:String, percentage:Number}} loading the parameter for loading
  */
 
 const useLoadHandler = () => {
