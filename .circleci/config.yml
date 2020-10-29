@@ -8,6 +8,26 @@ orbs:
   node: circleci/node@3.0.0
 
 jobs:
+  pre-pare:
+    <<: *defaults
+    steps:
+      - checkout
+      
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:  
+            - .
   deploy:
     <<: *defaults
     steps:
@@ -24,4 +44,5 @@ workflows:
   version: 2
   package-deploy:
     jobs:
+      - pre-pare
       - deploy
